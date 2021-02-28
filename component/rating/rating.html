@@ -1,10 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="rating.css">
+
+    <title>Kullanıcı Değerlendirme</title>
 </head>
 <body>
+
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+
+            <div class="card border-0 shadow-sm mb-3">
+                <div class="card-body">
+
+                    <form method="get">
+
+                        <h4 class="mb-3">Ürünü Değerlendirin</h4>
+
+                        <div class="form-floating mb-3">
+                            <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px;" required></textarea>
+                            <label for="floatingTextarea">Yorumunuz</label>
+                        </div>
+
+                        <div class="rate fs-5 rate-yellow mb-3">
+                            <input name="rating" type="radio" id="star1" value="1" required>
+                            <input name="rating" type="radio" id="star2" value="2" required>
+                            <input name="rating" type="radio" id="star3" value="3" required>
+                            <input name="rating" type="radio" id="star4" value="4" required>
+                            <input name="rating" type="radio" id="star5" value="5" required>
+
+                            <label for="star1" class="bi bi-star"></label>
+                            <label for="star2" class="bi bi-star"></label>
+                            <label for="star3" class="bi bi-star"></label>
+                            <label for="star4" class="bi bi-star"></label>
+                            <label for="star5" class="bi bi-star"></label>
+                        </div>
+
+                        <input type="submit" class="btn btn-dark" value="Gönder">
+                    </form>
+
+                </div>
+            </div>
+
+
+            <div class="card border-0 shadow-sm mb-3">
+                <div class="card-body">
+                    <h4>Yorumlar</h4>
+                    <span class="rate-yellow">
+                        <small for="star1" class="bi bi-star-fill"></small>
+                        <small for="star2" class="bi bi-star-fill"></small>
+                        <small for="star3" class="bi bi-star-fill"></small>
+                        <small for="star4" class="bi bi-star-fill"></small>
+                        <small for="star5" class="bi bi-star"></small>
+                    </span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <div class="text-muted fs-6 mb-3">Koray SADIKLAR, 28/02/2021</div>
+                    <ul class="list-inline fs-5">
+                        <li class="list-inline-item me-4">
+                            <i class="bi bi-hand-thumbs-up"></i> 32
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="bi bi-hand-thumbs-down"></i> 5
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-3">
+                <div class="card-body">
+                    <span class="rate-yellow">
+                        <small for="star1" class="bi bi-star-fill"></small>
+                        <small for="star2" class="bi bi-star-fill"></small>
+                        <small for="star3" class="bi bi-star-fill"></small>
+                        <small for="star4" class="bi bi-star-fill"></small>
+                        <small for="star5" class="bi bi-star"></small>
+                    </span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <div class="text-muted fs-6 mb-3">Koray SADIKLAR, 28/02/2021</div>
+                    <ul class="list-inline fs-5">
+                        <li class="list-inline-item me-4">
+                            <i class="bi bi-hand-thumbs-up"></i> 32
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="bi bi-hand-thumbs-down"></i> 5
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+
+    $("input[name='rating']").click(function () {
+
+        var star = $('.bi');
+        var select = $(this).val();
+
+        star.slice(0,5).removeClass("bi-star-fill");
+        star.slice(0,5).addClass("bi-star");
+
+        star.slice(0, select).removeClass("bi-star");
+        star.slice(0, select).addClass("bi-star-fill");
+
+    });
+
+</script>
 
 </body>
 </html>
